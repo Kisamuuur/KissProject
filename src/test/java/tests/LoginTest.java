@@ -10,16 +10,16 @@ import static utils.AllureUtils.takeScreenshot;
 
 public class LoginTest extends BaseTest {
 
-    @Epic("МОДУЛЬ ЛОГИНА ИНТЕРНЕТ МАГАЗИНA")
+    @Epic("ONLINE STORE LOGIN MODULE")
     @Feature("TMS-56")
     @Story("TNS-56.67")
     @Severity(SeverityLevel.BLOCKER)
     @Owner("")
     @TmsLink("")
     @Issue("")
-    @Description("ПРОВЕРКА ВХОДА В ИНТЕРНЕТ МАГАЗИН")
+    @Description("CHECKING THE ENTRANCE TO THE ONLINE STORE")
     @Flaky
-    @Test(description = "АВТОРИЗАЦИЯ С ВЕРНЫМИ ДАННЫМИ")
+    @Test(description = "AUTHORIZATION WITH CORRECT DATA")
     public void correctLogin() {
         loginPage.open();
         loginPage.login(user, password);

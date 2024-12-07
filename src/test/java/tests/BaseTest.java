@@ -23,7 +23,7 @@ public class BaseTest {
 
     @Parameters({"browser"})
     @BeforeMethod
-    @Description("ОТКРЫТИЕ")
+    @Description("OPENING")
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
