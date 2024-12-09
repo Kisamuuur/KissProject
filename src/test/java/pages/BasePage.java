@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public abstract class BasePage {
 
-    String BASE_URL = PropertyReader.getProperty("sauce.url");
+    String base_url = PropertyReader.getProperty("sauce.url");
     WebDriver driver;
     WebDriverWait wait;
 
