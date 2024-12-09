@@ -23,7 +23,7 @@ public class BaseTest {
 
     @Parameters({"browser"})
     @BeforeMethod
-    @Description("OPENING")
+    @Description("Открытие")
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -32,6 +32,7 @@ public class BaseTest {
         } else if (browser.equals("edge")) {
             driver = new EdgeDriver();
         }
+
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
         loginPage = new LoginPage(driver);

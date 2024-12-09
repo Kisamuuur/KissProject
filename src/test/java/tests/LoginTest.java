@@ -10,16 +10,16 @@ import static utils.AllureUtils.takeScreenshot;
 
 public class LoginTest extends BaseTest {
 
-    @Epic("ONLINE STORE LOGIN MODULE")
+    @Epic("Блок авторизации онлайн магазина")
     @Feature("TMS-56")
     @Story("TNS-56.67")
     @Severity(SeverityLevel.BLOCKER)
     @Owner("")
     @TmsLink("")
     @Issue("")
-    @Description("CHECKING THE ENTRANCE TO THE ONLINE STORE")
+    @Description("Проверка входа в онлайн магазин")
     @Flaky
-    @Test(description = "AUTHORIZATION WITH CORRECT DATA")
+    @Test(description = "Авторизация с корректными данными")
     public void correctLogin() {
         loginPage.open();
         loginPage.login(user, password);
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
         assertEquals(productsPage.getTitle(), "Products");
     }
 
-    @DataProvider(name = "FIRST")
+    @DataProvider(name = "loginData")
     public Object[][] loginData() {
         return new Object[][]{
                 {"locked_out_user", password, "Epic sadface: Sorry, this user has been locked out."},
@@ -37,7 +37,7 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "FIRST")
+    @Test(dataProvider = "loginData")
     public void loginWrongData(String user, String pass, String errorMsg) {
         loginPage.open();
         loginPage.login(user, pass);

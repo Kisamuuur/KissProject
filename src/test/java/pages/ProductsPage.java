@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsPage extends BasePage {
-
     public ProductsPage(WebDriver driver) {
         super(driver);
     }

@@ -15,12 +15,12 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @Step("OPENING THE BROWSER")
+    @Step("открытие браузера")
     public void open() {
-        driver.get(BASE_URL);
+        driver.get(base_url);
     }
 
-    @Step("DATA ENTRY {user} и {password}")
+    @Step("Введите данные {user} и {password}")
     public void login(String user, String password) {
         fillUserInput(user);
         fillPasswordInput(password);
@@ -39,7 +39,7 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).submit();
     }
 
-    @Step("TEXT FROM ERROR MESSAGE")
+    @Step("Текст в сообщении об ошибке")
     public String getErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
